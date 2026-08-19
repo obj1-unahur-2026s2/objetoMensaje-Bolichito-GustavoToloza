@@ -1,0 +1,8 @@
+import personas.*
+
+describe "Test para validar los ejemplos" {
+
+  method initialize() {
+    rosa.leGusta(remera)
+  }
+}
