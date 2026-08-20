@@ -27,7 +27,7 @@ object luisa {
 object juan {
 
     method leGusta(unaCosa) {
-        return !unaCosa.esDeColorFuerte() || unaCosa.peso() >= 1200 <= 1800
+        return !unaCosa.esDeColorFuerte() || unaCosa.peso().between(1200, 1800) //between se usa para un numero entre dos
     }
 
 }
