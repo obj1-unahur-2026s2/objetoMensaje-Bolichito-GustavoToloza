@@ -5,7 +5,15 @@ import cosas.*
 
 object bolichito {
     var objetoEnMostrador = remera
-    var objetoEnVidriera = pelota
+    var objetoEnVidriera = muñeco
+
+    method ponerEnMostrador(nuevoObjeto) {
+      objetoEnMostrador = nuevoObjeto
+    }
+
+    method objetoEnVidriera(nuevoObjeto) {
+      objetoEnVidriera = nuevoObjeto
+    }
 
     method objetoEnMostrador() {
         return objetoEnMostrador
@@ -25,15 +33,16 @@ object bolichito {
     method tieneAlgoExhibidoDe(unColor) {
         return self.objetoEnMostrador().color() == unColor || self.objetoEnVidriera().color() == unColor
     }
+
+    method estaEquilibrado() {
+        return self.objetoEnMostrador().peso() > self.objetoEnVidriera().peso()
+    }
+
     method puedeMejorar() {
         return !self.estaEquilibrado() || self.esMonocromatico()
     }
 
-    method estaEquilibrado() {
-        return true
-    }
-
     method puedeOfrecerleAlgoA(unaPersona) {
-        return 
+        return unaPersona.leGusta(self.objetoEnMostrador()) || unaPersona.leGusta(self.objetoEnVidriera())
     }
 }
